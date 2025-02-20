@@ -1,0 +1,83 @@
+name: "JMH Benchmark Action"
+description: "Runs JMH benchmarks on PR and base branch, then compares results"
+author: "Your Name"
+
+inputs:
+  java-version:
+    description: "Java version to use"
+    required: true
+    default: "11"
+  base-ref:
+    description: "Reference for the base branch (e.g., 'main', 'master', commit SHA)"
+    required: true
+  benchmark-command:
+    description: "Command to execute the benchmark"
+    required: true
+  github-token:
+    description: "GitHub token for posting comments"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check out PR branch
+      uses: actions/checkout@v4
+      with:
+        path: pr
+    - name: Check out base branch
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ inputs.base-ref }}
+        path: base
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: ${{ inputs.java-version }}
+    - name: Run benchmarks on base branch
+      run: |
+        cd base
+        ${{ inputs.benchmark-command }}
+      shell: bash
+    - name: Run benchmarks on PR branch
+      run: |
+        cd pr
+        ${{ inputs.benchmark-command }}
+      shell: bash
+    - name: Compare benchmark results
+      uses: benchmark-action/github-action-benchmark@v1
+      with:
+        name: 'JMH Benchmark Comparison'
+        tool: 'jmh'
+        output-file-path: pr/benchmark.json
+        external-data-json-path: base/benchmark.json
+        github-token: ${{ inputs.github-token }}
+        comment-always: true
+    - name: Post a Comment with Benchmark Results
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ inputs.github-token }}
+        script: |
+          const fs = require('fs');
+          const path = 'pr/benchmark.json';
+
+          let benchmarkResults = '';
+          if (fs.existsSync(path)) {
+            benchmarkResults = fs.readFileSync(path, 'utf8');
+          } else {
+            benchmarkResults = 'No benchmark results found.';
+          }
+
+          const commentBody = `
+          ### 🔥 JMH Benchmark Results 🔥
+          \`\`\`json
+          ${benchmarkResults}
+          \`\`\`
+          `;
+
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: commentBody
+          });
