@@ -62,6 +62,7 @@ runs:
       with:
         github-token: ${{ inputs.github-token }}
         script: |
-          require('${{ github.workspace }}/post-comment.js');
+          const path = require('path')
+          return require(path.resolve('post-comments.js'))({context})
       env:
         BENCHMARK_FILE: ${{ inputs.benchmark-file }}
