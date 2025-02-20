@@ -19,6 +19,8 @@ def compareBenchmarks(String baseFile, String prFile, String outputFile) {
     if (!baseResults || !prResults) {
         println "Error: Missing or invalid benchmark files."
         return
+    } else {
+        println "Comparing benchmarks..."
     }
 
     def report = new StringBuilder()
