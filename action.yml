@@ -38,6 +38,10 @@ runs:
       with:
         distribution: 'zulu'
         java-version: ${{ inputs.java-version }}
+    - name: Set up Groovy
+      uses: wtfjoke/setup-groovy@v2
+      with:
+        groovy-version: '4.x'
     - name: Run benchmarks on base branch
       run: |
         cd base
@@ -49,8 +53,7 @@ runs:
         ${{ inputs.benchmark-command }}
       shell: bash
     - name: Compare benchmark results with Groovy
-      run: groovy compareBenchmarks.groovy
-      shell: bash
+      run: groovy compare.groovy
     - name: Post a Comment with Benchmark Results
       uses: actions/github-script@v7
       with:
