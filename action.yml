@@ -54,6 +54,7 @@ runs:
       shell: bash
     - name: Compare benchmark results with Groovy
       run: groovy compare.groovy
+      shell: bash
     - name: Post a Comment with Benchmark Results
       uses: actions/github-script@v7
       with:
