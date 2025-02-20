@@ -48,21 +48,25 @@ runs:
         cd pr
         ${{ inputs.benchmark-command }}
       shell: bash
-    - name: Compare benchmark results
-      uses: benchmark-action/github-action-benchmark@v1
-      with:
-        name: 'JMH Benchmark Comparison'
-        tool: 'jmh'
-        output-file-path: pr/${{ inputs.benchmark-file }}
-        external-data-json-path: base/${{ inputs.benchmark-file }}
-        github-token: ${{ inputs.github-token }}
-        fail-on-regression: true
+    - name: Compare benchmark results with Groovy
+      run: groovy compareBenchmarks.groovy
+      shell: bash
     - name: Post a Comment with Benchmark Results
       uses: actions/github-script@v7
       with:
         github-token: ${{ inputs.github-token }}
         script: |
-          const path = require('path')
-          return require(path.resolve('post-comments.js'))({context})
-      env:
-        BENCHMARK_FILE: ${{ inputs.benchmark-file }}
+          const fs = require('fs');
+          const path = 'benchmark-comment.md';
+          let commentBody = '';
+          if (fs.existsSync(path)) {
+            commentBody = fs.readFileSync(path, 'utf8');
+          } else {
+            commentBody = 'No benchmark comparison available.';
+          }
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: commentBody
+          });
