@@ -36,14 +36,15 @@ class BenchmarkComparator {
         def report = new StringBuilder()
         def summary = new StringBuilder()
         report.append("### 🚀 Performance Report\n\n")
-        report.append("| Test | Base Score | PR Score | Change | % Change | Unit |\n")
-        report.append("|------|------------|---------|--------|----------|------|\n")
+        report.append("| Test | Base Score | PR Score | Change | % Change | Unit | Mode |\n")
+        report.append("|------|------------|---------|--------|----------|------|------|\n")
 
         baseResults.each { baseResult ->
             def testName = baseResult.getString("benchmark")
             def baseMode = baseResult.getString("mode")
             def baseScore = baseResult.getJSONObject("primaryMetric").getDouble("score")
             def scoreUnit = baseResult.getJSONObject("primaryMetric").getString("scoreUnit")
+            def modeDescription = baseMode == "avgt" ? "Average Time" : "Throughput"
 
             prResults.each { prResult ->
                 if (prResult.getString("benchmark") == testName && prResult.getString("mode") == baseMode) {
@@ -51,8 +52,8 @@ class BenchmarkComparator {
                     double change = prScore - baseScore
                     double percentageChange = (change / baseScore) * 100
 
-                    report.append(String.format("| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s |\n",
-                      testName, baseScore, prScore, change, percentageChange, scoreUnit))
+                    report.append(String.format("| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s | %s |\n",
+                      testName, baseScore, prScore, change, percentageChange, scoreUnit, modeDescription))
 
                     String fpchange = String.format("%.2f", Math.abs(percentageChange))
                     String fchange = String.format("%.3f", Math.abs(change))
