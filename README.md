@@ -33,13 +33,18 @@ benchmarks on the `main` branch and print comment with the results of the
 comparison, for example:
 
 ___
+
 ### 🚀 Performance Analysis
 
-| Test | Base Score | PR Score | Change | % Change | Unit | Mode |
-|------|------------|---------|--------|----------|------|------|
-| `com.github.lombrozo.xnav.XnavBenchmark.element` | 5.685 | 5.640 | -0.045 | -0.79% | us/op | Average Time |
-| `com.github.lombrozo.xnav.XnavBenchmark.xpath` | 8.973 | 9.089 | 0.116 | 1.30% | us/op | Average Time |
+| Test                                             | Base Score | PR Score | Change | % Change | Unit  | Mode         |
+|--------------------------------------------------|------------|----------|--------|----------|-------|--------------|
+| `com.github.lombrozo.xnav.XnavBenchmark.element` | 5.685      | 5.640    | -0.045 | -0.79%   | us/op | Average Time |
+| `com.github.lombrozo.xnav.XnavBenchmark.xpath`   | 8.973      | 9.089    | 0.116  | 1.30%    | us/op | Average Time |
 
-✅ Performance gain: `com.github.lombrozo.xnav.XnavBenchmark.element` is faster by 0.045 us/op (0.79%)
-⚠️ Performance loss: `com.github.lombrozo.xnav.XnavBenchmark.xpath` is slower by 0.116 us/op (1.30%)
+✅ Performance gain: `com.github.lombrozo.xnav.XnavBenchmark.element` is faster
+by 0.045 us/op (0.79%)
+
+⚠️ Performance loss: `com.github.lombrozo.xnav.XnavBenchmark.xpath` is slower by
+0.116 us/op (1.30%)
+
 ___
