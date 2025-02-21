@@ -1,4 +1,4 @@
-@Grab('org.json:json:20210307')
+@Grab('org.json:json:20250107')
 import org.json.JSONObject
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -8,7 +8,7 @@ def parseJsonFile(String filePath) {
         return new JSONObject(new String(Files.readAllBytes(Paths.get(filePath))))
     } catch (Exception e) {
         println "Error reading $filePath: ${e.message}"
-        throw new IllegalStateException("Invalid JSON file.")
+        throw new IllegalStateException("Invalid JSON file.", e)
     }
 }
 
