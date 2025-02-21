@@ -39,41 +39,39 @@ class BenchmarkComparator {
         report.append("|------|------------|---------|--------|----------|------|\n")
 
         baseResults.each { baseResult ->
-            if (baseResult.getString("mode") == "avgt") {
-                def testName = baseResult.getString("benchmark")
-                def baseMode = baseResult.getString("mode")
-                def baseScore = baseResult.getJSONObject("primaryMetric").getDouble("score")
-                def scoreUnit = baseResult.getJSONObject("primaryMetric").getString("scoreUnit")
+            def testName = baseResult.getString("benchmark")
+            def baseMode = baseResult.getString("mode")
+            def baseScore = baseResult.getJSONObject("primaryMetric").getDouble("score")
+            def scoreUnit = baseResult.getJSONObject("primaryMetric").getString("scoreUnit")
 
-                prResults.each { prResult ->
-                    if (prResult.getString("benchmark") == testName && prResult.getString("mode") == baseMode) {
-                        def prScore = prResult.getJSONObject("primaryMetric").getDouble("score")
-                        double change = prScore - baseScore
-                        double percentageChange = (change / baseScore) * 100
+            prResults.each { prResult ->
+                if (prResult.getString("benchmark") == testName && prResult.getString("mode") == baseMode) {
+                    def prScore = prResult.getJSONObject("primaryMetric").getDouble("score")
+                    double change = prScore - baseScore
+                    double percentageChange = (change / baseScore) * 100
 
-                        report.append(String.format("| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s |\n",
-                          testName, baseScore, prScore, change, percentageChange, scoreUnit))
+                    report.append(String.format("| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s |\n",
+                      testName, baseScore, prScore, change, percentageChange, scoreUnit))
 
-                        String fpchange = String.format("%.2f", Math.abs(percentageChange))
-                        String fchange = String.format("%.3f", Math.abs(change))
-                        if (baseMode == "thrpt") {
-                            if (change < 0) {
-                                report.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
-                                if (percentageChange < -100) {
-                                    report.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
-                                }
-                            } else {
-                                report.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
+                    String fpchange = String.format("%.2f", Math.abs(percentageChange))
+                    String fchange = String.format("%.3f", Math.abs(change))
+                    if (baseMode == "thrpt") {
+                        if (change < 0) {
+                            report.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            if (percentageChange < -100) {
+                                report.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             }
                         } else {
-                            if (change > 0) {
-                                report.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
-                                if (percentageChange > 100) {
-                                    report.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
-                                }
-                            } else {
-                                report.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            report.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
+                        }
+                    } else {
+                        if (change > 0) {
+                            report.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            if (percentageChange > 100) {
+                                report.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             }
+                        } else {
+                            report.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
                         }
                     }
                 }
