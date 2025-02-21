@@ -8,27 +8,79 @@ import java.nio.file.Paths
 
 class BenchmarkComparatorTest extends Specification {
 
-    def "test compareBenchmarks"() {
-        setup:
-        Path directory = Files.createTempDirectory("groovy-jmh-tests");
-        directory.toFile().deleteOnExit();
-        print "Created temp directory ${directory}"
-        def actual = "benchmark-comment.md"
+    def setupTempDirectory(String baseJson, String prJson) {
+        Path directory = Files.createTempDirectory("groovy-jmh-tests" + new Random().nextInt())
+        directory.toFile().deleteOnExit()
         Files.createDirectory(directory.resolve("base"))
         Files.createDirectory(directory.resolve("pr"))
-        Files.write(directory.resolve("base").resolve("benchmark.json"), faster.bytes)
-        Files.write(directory.resolve("pr").resolve("benchmark.json"), longer.bytes)
+        def base = directory.resolve("base").resolve("benchmark.json")
+        Files.write(base, baseJson.bytes)
+        base.toFile().deleteOnExit()
+        def pr = directory.resolve("pr").resolve("benchmark.json")
+        Files.write(pr, prJson.bytes)
+        pr.toFile().deleteOnExit()
+        return directory
+    }
+
+    def "test compareBenchmarks with performance loss"() {
+        setup:
+        Path directory = setupTempDirectory(faster, longer)
+        def actual = "benchmark-comment.md"
 
         when:
         BenchmarkComparator.compareBenchmarks(
           directory.resolve("base").resolve("benchmark.json").toString(),
           directory.resolve("pr").resolve("benchmark.json").toString(),
-          actual
+          directory.resolve(actual).toString()
+        )
+
+
+        then:
+        def comment = directory.resolve(actual)
+        def output = new String(Files.readAllBytes(comment))
+        comment.toFile().deleteOnExit()
+        output.contains("| `com.github.lombrozo.xnav.XnavBenchmark.xpath` | 8.876 | 8.976 | 0.100 | 1.13% | us/op |")
+        output.contains("⚠️ Performance loss: `com.github.lombrozo.xnav.XnavBenchmark.xpath` is slower by 0.100 us/op (1.13%)")
+    }
+
+    def "test compareBenchmarks with performance gain"() {
+        setup:
+        Path directory = setupTempDirectory(longer, faster)
+        def actual = "benchmark-comment.md"
+
+        when:
+        BenchmarkComparator.compareBenchmarks(
+          directory.resolve("base").resolve("benchmark.json").toString(),
+          directory.resolve("pr").resolve("benchmark.json").toString(),
+          directory.resolve(actual).toString()
         )
 
         then:
-        def output = new String(Files.readAllBytes(Paths.get(actual)))
-        output.contains("| test1 | 100.000 | 110.000 | 10.000 | 10.00% |")
+        def comment = directory.resolve(actual)
+        def output = new String(Files.readAllBytes(comment))
+        comment.toFile().deleteOnExit()
+        output.contains("| `com.github.lombrozo.xnav.XnavBenchmark.xpath` | 8.976 | 8.876 | -0.100 | -1.12% | us/op |")
+        output.contains("✅ Performance gain: `com.github.lombrozo.xnav.XnavBenchmark.xpath` is faster by -0.100 us/op (-1.12%)")
+    }
+
+    def "test compareBenchmarks with no change"() {
+        setup:
+        Path directory = setupTempDirectory(faster, faster)
+        def actual = "benchmark-comment.md"
+
+        when:
+        BenchmarkComparator.compareBenchmarks(
+          directory.resolve("base").resolve("benchmark.json").toString(),
+          directory.resolve("pr").resolve("benchmark.json").toString(),
+          directory.resolve(actual).toString()
+        )
+
+        then:
+        def comment = directory.resolve(actual)
+        def output = new String(Files.readAllBytes(comment))
+        comment.toFile().deleteOnExit()
+        output.contains("| `com.github.lombrozo.xnav.XnavBenchmark.xpath` | 8.876 | 8.876 | 0.000 | 0.00% | us/op |")
+        output.contains("✅ Performance gain: `com.github.lombrozo.xnav.XnavBenchmark.xpath` is faster by 0.000 us/op (0.00%)")
     }
 
     def faster = '''

@@ -24,15 +24,17 @@ class BenchmarkComparator {
         def baseResults = json(base)
         def prResults = json(pr)
 
+
         if (!baseResults || !prResults) {
             println "Error: Missing or invalid benchmark files."
             return
         } else {
-            println "Comparing benchmarks..."
+            println "Comparing benchmarks '$base' and '$pr'"
+            println "Results will be saved to $output"
         }
 
         def report = new StringBuilder()
-        report.append("### Performance Report\n\n")
+        report.append("### 🚀 Performance Report\n\n")
         report.append("| Test | Base Score | PR Score | Change | % Change | Unit |\n")
         report.append("|------|------------|---------|--------|----------|------|\n")
 
@@ -54,9 +56,12 @@ class BenchmarkComparator {
                         String fpchange = String.format("%.2f", percentageChange)
                         String fchange = String.format("%.3f", change)
                         if (change > 0) {
-                            report.append("Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            report.append("⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            if (percentageChange > 100) {
+                                report.append("❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            }
                         } else {
-                            report.append("Performance gain: `${testName}` is faster by ${-fchange} ${scoreUnit} (${fpchange.abs()}%)")
+                            report.append("✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
                         }
                     }
                 }
