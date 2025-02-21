@@ -34,6 +34,7 @@ class BenchmarkComparator {
         }
 
         def report = new StringBuilder()
+        def summary = new StringBuilder()
         report.append("### 🚀 Performance Report\n\n")
         report.append("| Test | Base Score | PR Score | Change | % Change | Unit |\n")
         report.append("|------|------------|---------|--------|----------|------|\n")
@@ -57,27 +58,27 @@ class BenchmarkComparator {
                     String fchange = String.format("%.3f", Math.abs(change))
                     if (baseMode == "thrpt") {
                         if (change < 0) {
-                            report.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            summary.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             if (percentageChange < -100) {
-                                report.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                                summary.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             }
                         } else {
-                            report.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            summary.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
                         }
                     } else {
                         if (change > 0) {
-                            report.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            summary.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             if (percentageChange > 100) {
-                                report.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                                summary.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             }
                         } else {
-                            report.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            summary.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
                         }
                     }
                 }
             }
         }
-
+        report.append(summary.toString())
         Files.write(Paths.get(output), report.toString().bytes)
         println "Benchmark comparison completed. Results saved to $output"
     }
