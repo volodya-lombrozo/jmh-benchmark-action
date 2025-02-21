@@ -47,21 +47,21 @@ class BenchmarkComparator {
                 prResults.each { prResult ->
                     if (prResult.getString("benchmark") == testName && prResult.getString("mode") == "avgt") {
                         def prScore = prResult.getJSONObject("primaryMetric").getDouble("score")
-                        def change = prScore - baseScore
-                        def percentageChange = (change / baseScore) * 100
+                        double change = prScore - baseScore
+                        double percentageChange = (change / baseScore) * 100
 
                         report.append(String.format("| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s |\n",
                           testName, baseScore, prScore, change, percentageChange, scoreUnit))
 
-                        String fpchange = String.format("%.2f", percentageChange)
-                        String fchange = String.format("%.3f", change)
+                        String fpchange = String.format("%.2f", Math.abs(percentageChange))
+                        String fchange = String.format("%.3f", Math.abs(change))
                         if (change > 0) {
-                            report.append("⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            report.append("\n⚠️ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             if (percentageChange > 100) {
-                                report.append("❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                                report.append("\n❌ Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
                             }
                         } else {
-                            report.append("✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
+                            report.append("\n✅ Performance gain: `${testName}` is faster by ${fchange} ${scoreUnit} (${fpchange}%)")
                         }
                     }
                 }

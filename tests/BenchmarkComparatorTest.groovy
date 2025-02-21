@@ -60,7 +60,7 @@ class BenchmarkComparatorTest extends Specification {
         def output = new String(Files.readAllBytes(comment))
         comment.toFile().deleteOnExit()
         output.contains("| `com.github.lombrozo.xnav.XnavBenchmark.xpath` | 8.976 | 8.876 | -0.100 | -1.12% | us/op |")
-        output.contains("✅ Performance gain: `com.github.lombrozo.xnav.XnavBenchmark.xpath` is faster by -0.100 us/op (-1.12%)")
+        output.contains("✅ Performance gain: `com.github.lombrozo.xnav.XnavBenchmark.xpath` is faster by 0.100 us/op (1.12%)")
     }
 
     def "test compareBenchmarks with no change"() {
