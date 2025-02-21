@@ -1,22 +1,28 @@
 @Grab('org.json:json:20250107')
+import org.json.JSONArray
 import org.json.JSONObject
 import java.nio.file.Files
 import java.nio.file.Paths
 
 class BenchmarkComparator {
 
-    static JSONObject parseJsonFile(String filePath) {
+    /**
+     * Read a JSON array
+     * @param path Path to the JSON file
+     * @return Json array
+     */
+    static JSONArray json(String path) {
         try {
-            return new JSONObject(new String(Files.readAllBytes(Paths.get(filePath))))
+            return new JSONArray(new String(Files.readAllBytes(Paths.get(path))))
         } catch (Exception e) {
-            println "Error reading $filePath: ${e.message}"
+            println "Error reading $path: ${e.message}"
             throw new IllegalStateException("Invalid JSON file.", e)
         }
     }
 
-    static void compareBenchmarks(String baseFile, String prFile, String outputFile) {
-        def baseResults = parseJsonFile(baseFile)
-        def prResults = parseJsonFile(prFile)
+    static void compareBenchmarks(String base, String pr, String output) {
+        def baseResults = json(base)
+        def prResults = json(pr)
 
         if (!baseResults || !prResults) {
             println "Error: Missing or invalid benchmark files."
@@ -27,22 +33,29 @@ class BenchmarkComparator {
 
         def report = new StringBuilder()
         report.append("### 🔥 JMH Benchmark Comparison 🔥\n\n")
-        report.append("| Test | Base Score | PR Score | Change | % Change |\n")
-        report.append("|------|------------|---------|--------|----------|\n")
+        report.append("| Test | Base Score | PR Score | Change | % Change | Unit |\n")
+        report.append("|------|------------|---------|--------|----------|------|\n")
 
-        baseResults.keySet().each { test ->
-            if (prResults.has(test)) {
-                def baseScore = baseResults.getJSONObject(test).getDouble("score")
-                def prScore = prResults.getJSONObject(test).getDouble("score")
-                def change = prScore - baseScore
-                def percentageChange = (change / baseScore) * 100
+        baseResults.each { baseResult ->
+            if (baseResult.getString("mode") == "avgt") {
+                def testName = baseResult.getString("benchmark")
+                def baseScore = baseResult.getJSONObject("primaryMetric").getDouble("score")
+                def scoreUnit = baseResult.getJSONObject("primaryMetric").getString("scoreUnit")
 
-                report.append(String.format("| %s | %.3f | %.3f | %.3f | %.2f%% |\n",
-                  test, baseScore, prScore, change, percentageChange))
+                prResults.each { prResult ->
+                    if (prResult.getString("benchmark") == testName && prResult.getString("mode") == "avgt") {
+                        def prScore = prResult.getJSONObject("primaryMetric").getDouble("score")
+                        def change = prScore - baseScore
+                        def percentageChange = (change / baseScore) * 100
+
+                        report.append(String.format("| %s | %.3f | %.3f | %.3f | %.2f%% | %s |\n",
+                          testName, baseScore, prScore, change, percentageChange, scoreUnit))
+                    }
+                }
             }
         }
 
-        Files.write(Paths.get(outputFile), report.toString().bytes)
-        println "Benchmark comparison completed. Results saved to $outputFile"
+        Files.write(Paths.get(output), report.toString().bytes)
+        println "Benchmark comparison completed. Results saved to $output"
     }
 }
