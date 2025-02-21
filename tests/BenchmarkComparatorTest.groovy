@@ -6,7 +6,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 
-class CompareTest extends Specification {
+class BenchmarkComparatorTest extends Specification {
 
     def "test compareBenchmarks"() {
         setup:

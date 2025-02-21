@@ -32,7 +32,7 @@ class BenchmarkComparator {
         }
 
         def report = new StringBuilder()
-        report.append("### 🔥 JMH Benchmark Comparison 🔥\n\n")
+        report.append("### Performance Report\n\n")
         report.append("| Test | Base Score | PR Score | Change | % Change | Unit |\n")
         report.append("|------|------------|---------|--------|----------|------|\n")
 
@@ -48,8 +48,16 @@ class BenchmarkComparator {
                         def change = prScore - baseScore
                         def percentageChange = (change / baseScore) * 100
 
-                        report.append(String.format("| %s | %.3f | %.3f | %.3f | %.2f%% | %s |\n",
+                        report.append(String.format("| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s |\n",
                           testName, baseScore, prScore, change, percentageChange, scoreUnit))
+
+                        String fpchange = String.format("%.2f", percentageChange)
+                        String fchange = String.format("%.3f", change)
+                        if (change > 0) {
+                            report.append("Performance loss: `${testName}` is slower by ${fchange} ${scoreUnit} (${fpchange}%)")
+                        } else {
+                            report.append("Performance gain: `${testName}` is faster by ${-fchange} ${scoreUnit} (${fpchange.abs()}%)")
+                        }
                     }
                 }
             }
