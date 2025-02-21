@@ -35,7 +35,7 @@ class BenchmarkComparator {
 
         def report = new StringBuilder()
         def summary = new StringBuilder()
-        report.append("### 🚀 Performance Report\n\n")
+        report.append("### 🚀 Performance Analysis\n\n")
         report.append("| Test | Base Score | PR Score | Change | % Change | Unit | Mode |\n")
         report.append("|------|------------|---------|--------|----------|------|------|\n")
 
