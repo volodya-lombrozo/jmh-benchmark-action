@@ -53,7 +53,7 @@ runs:
         ${{ inputs.benchmark-command }}
       shell: bash
     - name: Compare benchmark results with Groovy
-      run: groovy ${{ github.action_path }}/compare.groovy
+      run: groovy -cp ${{ github.action_path }} ${{ github.action_path }}/compare.groovy
       shell: bash
     - name: Post a Comment with Benchmark Results
       uses: actions/github-script@v7
