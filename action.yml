@@ -13,9 +13,6 @@ inputs:
   benchmark-command:
     description: "Command to execute the benchmark"
     required: true
-  github-token:
-    description: "GitHub token for posting comments"
-    required: true
   benchmark-file:
     description: "Path to the benchmark results file"
     required: true
