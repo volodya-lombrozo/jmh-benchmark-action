@@ -18,6 +18,7 @@ inputs:
     required: true
     default: "benchmark.json"
 
+#todo: What is the difference between 'outputs' and GITHUB_OUTPUT?
 outputs:
   benchmark-results:
     description: "Benchmark results after comparison"
