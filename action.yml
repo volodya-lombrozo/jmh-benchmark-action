@@ -21,6 +21,11 @@ inputs:
     required: true
     default: "benchmark.json"
 
+outputs:
+  benchmark-results:
+    description: "Benchmark results after comparison"
+    value: ${{ steps.compare.outputs.result }}
+
 runs:
   using: "composite"
   steps:
@@ -53,24 +58,9 @@ runs:
         ${{ inputs.benchmark-command }}
       shell: bash
     - name: Compare benchmark results with Groovy
+      id: compare
       run: groovy -cp ${{ github.action_path }} ${{ github.action_path }}/compare.groovy
       shell: bash
-    - name: Post a Comment with Benchmark Results
-      uses: actions/github-script@v7
-      with:
-        github-token: ${{ inputs.github-token }}
-        script: |
-          const fs = require('fs');
-          const path = 'benchmark-comment.md';
-          let commentBody = '';
-          if (fs.existsSync(path)) {
-            commentBody = fs.readFileSync(path, 'utf8');
-          } else {
-            commentBody = 'No benchmark comparison available.';
-          }
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: commentBody
-          });
+    - name: Save benchmark comparison
+      run: echo benchmark-comment.md >> "$GITHUB_OUTPUT"
+      shell: bash
