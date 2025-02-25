@@ -18,12 +18,6 @@ inputs:
     required: true
     default: "benchmark.json"
 
-#todo: What is the difference between 'outputs' and GITHUB_OUTPUT?
-outputs:
-  benchmark-results:
-    description: "Benchmark results after comparison"
-    value: ${{ steps.compare.outputs.result }}
-
 runs:
   using: "composite"
   steps:
@@ -59,6 +53,8 @@ runs:
       id: compare
       run: groovy -cp ${{ github.action_path }} ${{ github.action_path }}/compare.groovy
       shell: bash
-    - name: Save benchmark comparison
-      run: cat benchmark-comment.md >> "$GITHUB_OUTPUT"
-      shell: bash
+    - name: Upload comment as an artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: benchmark-comment
+        path: benchmark-comment.md
