@@ -54,7 +54,7 @@ runs:
       run: groovy -cp ${{ github.action_path }} ${{ github.action_path }}/compare.groovy
       shell: bash
     - name: Save PR number to file
-      run: echo "${{ github.event.number }}" > pr_number.txt
+      run: echo "${{ github.event.number }}" > pr-number
       shell: bash
     - name: Upload comment as an artifact
       uses: actions/upload-artifact@v4
@@ -65,4 +65,4 @@ runs:
       uses: actions/upload-artifact@v4
       with:
         name: pr-number
-        path: pr_number.txt
+        path: pr-number
