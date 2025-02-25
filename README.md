@@ -1,7 +1,24 @@
 # jmh-benchmark-action
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+`jmh-benchmark-action` is a GitHub Action that runs JMH benchmarks on pull
+requests and compares the results with the base branch. It helps in identifying
+performance regressions and improvements.
+
+## Installation
+
 To add a JMH benchmark action to your repository, create a new file in
-the `.github/workflows` directory with the following content:
+the `.github/workflows` directory with the following content.
 
 ```yaml
 name: Performance Regression Check
@@ -33,6 +50,7 @@ comparison.
 
 <details>
 <summary> Message Example </summary>
+
 ### 🚀 Performance Analysis
 
 | Test                                             | Base Score | PR Score | Change | % Change | Unit  | Mode         |
@@ -174,4 +192,8 @@ pull request.
 Pay attention that the second workflow should be merged into the main branch
 before the first workflow is triggered.
 
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file
+for details.
 
