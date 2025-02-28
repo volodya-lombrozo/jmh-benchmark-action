@@ -27,18 +27,11 @@ performance changes. Here's a simplified overview of the process:
 
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Installation](#installation)
 - [Print messages to a personal repository](#personal-repository-messages)
 - [Print messages to an open source repository](#open-source-repository-messages)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Introduction
-
-`jmh-benchmark-action` is a GitHub Action that runs JMH benchmarks on pull
-requests and compares the results with the base branch. It helps in identifying
-performance regressions and improvements.
 
 ## Installation
 
