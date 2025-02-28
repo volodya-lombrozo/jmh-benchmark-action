@@ -1,16 +1,18 @@
 # jmh-benchmark-action
 
 `jmh-benchmark-action` is a GitHub Action designed to automate the process of
-running Java Microbenchmark Harness (JMH) benchmarks on pull requests. It
-compares the performance results against the base branch to identify any
-performance regressions or improvements. This action is particularly useful for
-developers who want to ensure that their code changes do not negatively impact
-the performance of their application.
+running Java Microbenchmark Harness ([JMH](https://github.com/openjdk/jmh))
+benchmarks on pull requests.
+It compares the performance results against the base branch to identify any
+performance regressions or improvements.
+This action is particularly useful for developers who want to ensure that their
+code changes do not negatively impact the performance of their applications.
 
 ## How It Works
 
 The `jmh-benchmark-action` automates the process of running JMH benchmarks on
-both the pull request and the base branch, then compares the results to identify
+both the pull request and the base branch, and then compares the results to
+identify
 performance changes. Here's a simplified overview of the process:
 
 1. **Check Out Branches**: The action checks out both the pull request branch
@@ -30,6 +32,7 @@ performance changes. Here's a simplified overview of the process:
 - [Installation](#installation)
 - [Print messages to a personal repository](#personal-repository-messages)
 - [Print messages to an open source repository](#open-source-repository-messages)
+- [Similar Solutions](#similar-solutions)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -63,7 +66,7 @@ jobs:
 
 This action will run JMH benchmarks on every pull request to the `main` branch.
 The action will compare the results of the benchmarks with the results of the
-benchmarks on the `main` branch and print comment with the results of the
+benchmarks on the `main` branch and print a comment with the results of the
 comparison.
 
 <details>
@@ -87,7 +90,7 @@ by 0.045 us/op (0.79%)
 ## Personal Repository Messages
 
 If you use `jmh-benchmark-action` in your personal repository, you can print the
-benchmark results directly withing the same workflow:
+benchmark results directly within the same workflow:
 
 ```yaml
 name: Performance Regression Check
@@ -137,7 +140,7 @@ to the repository if the repository is owned by the user who created the token.
 
 ## Open Source Repository Messages
 
-In case you use `jmh-benchmark-action` in an open source repository, you need
+In case you use `jmh-benchmark-action` in an open-source repository, you need
 to solve the issue with the permissions to post comments. By default, all the
 pull requests from forks do not have access to the secrets of the repository.
 Moreover, `GITHUB_TOKEN` has only read permissions to the repository.
@@ -212,7 +215,46 @@ before the first workflow is triggered.
 
 ## Contributing
 
-Contributions are welcome! Just open an issue or submit a pull request.
+We welcome contributions from the community! If you're interested in
+contributing to this project, please follow these guidelines:
+
+1. **Code of Conduct**: Please read and adhere to
+   our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a welcoming and inclusive
+   environment for everyone.
+
+2. **Issues**: If you encounter a bug or have a feature request, please open an
+   issue. Provide as much detail as possible to help us understand and address
+   your concern.
+
+3. **Pull Requests**: We use
+   a [pull request template](.github/pull_request_template.md) to help you
+   structure your contributions. Please fill it out completely when submitting a
+   pull request.
+
+4. **Development**:
+    - Fork the repository and create a new branch for your feature or bug fix.
+    - Write clear, concise commit messages.
+    - Ensure your code follows the project's style guidelines and passes all
+      tests.
+
+5. **Review Process**: All contributions will be reviewed by our maintainers. We
+   may ask for changes or clarifications before merging your pull request.
+
+Thank you for your interest in contributing to our project!
+
+## Similar Solutions
+
+If you're exploring alternatives to `jmh-benchmark-action`, you might consider
+the following solutions:
+
+1. [benchmark-action/github-action-benchmark](https://github.com/benchmark-action/github-action-benchmark):
+   A popular GitHub Action for running benchmarks on pull requests. It supports
+   multiple languages and frameworks, including Java and JMH. However, you
+   might encounter issues with posting comments to the pull request.
+2. [kitlangton/jmh-benchmark-action](https://github.com/kitlangton/jmh-benchmark-action):
+   A GitHub Action that runs JMH benchmarks on pull requests and posts the
+   results as comments. Similar to `jmh-benchmark-action`, but it hasn't been updated
+   for a while. You might give it a try and see if it fits your needs.
 
 ## License
 
