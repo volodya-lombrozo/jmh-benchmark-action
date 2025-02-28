@@ -7,6 +7,14 @@ performance regressions or improvements. This action is particularly useful for
 developers who want to ensure that their code changes do not negatively impact
 the performance of their application.
 
+## How It Works
+
+The `jmh-benchmark-action` works by executing JMH benchmarks on the code changes
+in a pull request and comparing the results with the benchmarks from the base
+branch. It provides a detailed report of any performance regressions or
+improvements, helping developers maintain optimal performance in their
+applications.
+
 ## Table of Contents
 
 - [Introduction](#introduction)
