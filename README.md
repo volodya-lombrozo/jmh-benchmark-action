@@ -1,6 +1,11 @@
 # jmh-benchmark-action
 
-`jmh-benchmark-action` is a GitHub Action designed to automate the process of running Java Microbenchmark Harness (JMH) benchmarks on pull requests. It compares the performance results against the base branch to identify any performance regressions or improvements. This action is particularly useful for developers who want to ensure that their code changes do not negatively impact the performance of their application.
+`jmh-benchmark-action` is a GitHub Action designed to automate the process of
+running Java Microbenchmark Harness (JMH) benchmarks on pull requests. It
+compares the performance results against the base branch to identify any
+performance regressions or improvements. This action is particularly useful for
+developers who want to ensure that their code changes do not negatively impact
+the performance of their application.
 
 ## Table of Contents
 
