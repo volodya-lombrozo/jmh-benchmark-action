@@ -170,7 +170,6 @@ jobs:
           java-version: "11"
           base-ref: "main"
           benchmark-command: |
-            mvn test-compile
             mvn jmh:benchmark -Djmh.rf=json -Djmh.rff=benchmark.json
           benchmark-file: "benchmark.json"
 ```
