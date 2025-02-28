@@ -9,17 +9,21 @@ the performance of their application.
 
 ## How It Works
 
-The `jmh-benchmark-action` automates the process of running JMH benchmarks on both the pull request and the base branch, then compares the results to identify performance changes. Here's a simplified overview of the process:
+The `jmh-benchmark-action` automates the process of running JMH benchmarks on
+both the pull request and the base branch, then compares the results to identify
+performance changes. Here's a simplified overview of the process:
 
-1. **Check Out Branches**: The action checks out both the pull request branch and the base branch.
+1. **Check Out Branches**: The action checks out both the pull request branch
+   and the base branch.
 
-2. **Run Benchmarks**: It runs the specified benchmark command on both branches to generate benchmark results.
+2. **Run Benchmarks**: It runs the specified benchmark command on both branches
+   to generate benchmark results.
 
-3. **Compare Results**: The action compares the benchmark results from the two branches and generates a report highlighting any performance gains or losses.
+3. **Compare Results**: The action compares the benchmark results from the two
+   branches and generates a report highlighting any performance gains or losses.
 
-4. **Upload Artifacts**: The action uploads the benchmark comparison report as artifacts for further use, such as posting comments on the pull request.
-
-This streamlined process ensures that any performance regressions or improvements are clearly identified and reported, helping maintain optimal application performance.
+4. **Upload Artifacts**: The action uploads the benchmark comparison report as
+   artifacts for further use, such as posting comments on the pull request.
 
 ## Table of Contents
 
