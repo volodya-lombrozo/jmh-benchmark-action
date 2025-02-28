@@ -59,8 +59,7 @@ jobs:
           java-version: "11"
           base-ref: "main"
           benchmark-command: |
-            mvn test-compile
-            mvn jmh:benchmark -Pbenchmark -Djmh.benchmarks=XnavBenchmark -Djmh.wi=1 -Djmh.i=2 -Djmh.f=1 -Djmh.rf=json -Djmh.rff=benchmark.json
+            mvn jmh:benchmark -Djmh.rf=json -Djmh.rff=benchmark.json
           benchmark-file: "benchmark.json"
 ```
 
@@ -110,8 +109,7 @@ jobs:
           java-version: "11"
           base-ref: "main"
           benchmark-command: |
-            mvn test-compile
-            mvn jmh:benchmark -Pbenchmark -Djmh.benchmarks=XnavBenchmark -Djmh.wi=1 -Djmh.i=2 -Djmh.f=1 -Djmh.rf=json -Djmh.rff=benchmark.json
+            mvn jmh:benchmark -Djmh.rf=json -Djmh.rff=benchmark.json
           benchmark-file: "benchmark.json"
       - name: Post a Comment with Benchmark Results
         uses: actions/github-script@v7
@@ -173,7 +171,7 @@ jobs:
           base-ref: "main"
           benchmark-command: |
             mvn test-compile
-            mvn jmh:benchmark -Pbenchmark -Djmh.benchmarks=XnavBenchmark -Djmh.wi=1 -Djmh.i=1 -Djmh.f=1 -Djmh.rf=json -Djmh.rff=benchmark.json
+            mvn jmh:benchmark -Djmh.rf=json -Djmh.rff=benchmark.json
           benchmark-file: "benchmark.json"
 ```
 
@@ -182,28 +180,33 @@ And the comment posting workflow:
 ```yaml
 name: Post Benchmark Comment
 on:
-  workflow_run:
-    workflows: [ "Performance Regression Check" ]
-    types:
-      - completed
+   workflow_run:
+      workflows: [ "Performance Regression Check" ]
+      types:
+         - completed
 
 jobs:
-  post-comment:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download Benchmark Comment
-        uses: actions/download-artifact@v4
-        with:
-          name: benchmark-comment
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Post Comment on PR
-        uses: mshick/add-pr-comment@v2
-        with:
-          issue: ${{ github.event.workflow_run.pull_requests[0].number }}
-          message-path: |
-            benchmark-comment.md
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+   post-comment:
+      timeout-minutes: 15
+      runs-on: ubuntu-24.04
+      steps:
+         - name: Download PR Number and Benchmark Comment
+           uses: actions/download-artifact@v4
+           with:
+              run-id: ${{ github.event.workflow_run.id }}
+              github-token: ${{ secrets.GITHUB_TOKEN }}
+         - name: Read and display PR Number
+           run: |
+              PR_NUMBER=$(cat pr-number/pr-number)
+              echo "PR_NUMBER=$PR_NUMBER" >> "$GITHUB_ENV"
+              echo "The PR number is $PR_NUMBER"
+         - name: Post Comment on PR
+           uses: mshick/add-pr-comment@v2
+           with:
+              issue: ${{ env.PR_NUMBER }}
+              message-path: |
+                 benchmark-comment/benchmark-comment.md
+              repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 The second workflow starts when the first workflow is completed. It downloads
