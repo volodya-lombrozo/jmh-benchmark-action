@@ -9,31 +9,17 @@ the performance of their application.
 
 ## How It Works
 
-The `jmh-benchmark-action` automates the process of running JMH benchmarks on
-both the pull request and the base branch, then compares the results to identify
-performance changes. Here's a step-by-step breakdown of how it works:
+The `jmh-benchmark-action` automates the process of running JMH benchmarks on both the pull request and the base branch, then compares the results to identify performance changes. Here's a simplified overview of the process:
 
-1. **Check Out Branches**: The action checks out both the pull request branch
-   and the base branch using the `actions/checkout` action.
+1. **Check Out Branches**: The action checks out both the pull request branch and the base branch.
 
-2. **Set Up Java and Groovy**: It sets up the required Java version
-   using `actions/setup-java` and Groovy using `wtfjoke/setup-groovy`.
+2. **Run Benchmarks**: It runs the specified benchmark command on both branches to generate benchmark results.
 
-3. **Run Benchmarks**: The action runs the specified benchmark command on both
-   the base and pull request branches to generate benchmark results.
+3. **Compare Results**: The action compares the benchmark results from the two branches and generates a report highlighting any performance gains or losses.
 
-4. **Compare Results**: Using a Groovy script (`compare.groovy`), it compares
-   the benchmark results from the two branches. The script reads JSON files
-   containing the benchmark results and generates a report highlighting any
-   performance gains or losses.
+4. **Upload Artifacts**: The action uploads the benchmark comparison report as artifacts for further use, such as posting comments on the pull request.
 
-5. **Upload Artifacts**: The action saves the pull request number and uploads
-   the benchmark comparison report as artifacts for further use, such as posting
-   comments on the pull request.
-
-This process ensures that any performance regressions or improvements are
-clearly identified and reported, helping maintain optimal application
-performance.
+This streamlined process ensures that any performance regressions or improvements are clearly identified and reported, helping maintain optimal application performance.
 
 ## Table of Contents
 
