@@ -51,7 +51,7 @@ runs:
       shell: bash
     - name: Compare benchmark results with Groovy
       id: compare
-      run: groovy -cp ${{ github.action_path }} ${{ github.action_path }}/compare.groovy
+      run: ${{ github.action_path }}/gradlew -p ${{ github.action_path }} run --args="${{ github.workspace }}/base/benchmark.json ${{ github.workspace }}/pr/benchmark.json ${{ github.workspace }}/benchmark-comment.md"
       shell: bash
     - name: Save PR number to file
       run: echo "${{ github.event.number }}" > pr-number
