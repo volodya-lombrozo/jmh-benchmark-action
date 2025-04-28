@@ -1,0 +1,47 @@
+{
+  "jmhVersion": "1.37",
+  "benchmark": "com.github.lombrozo.xnav.XnavBenchmark.xpath",
+  "mode": "avgt",
+  "threads": 1,
+  "forks": 1,
+  "jvm": "/opt/hostedtoolcache/Java_Zulu_jdk/11.0.26-4/x64/bin/java",
+  "jvmArgs": [],
+  "jdkVersion": "11.0.26",
+  "vmName": "OpenJDK 64-Bit Server VM",
+  "vmVersion": "11.0.26+4-LTS",
+  "warmupIterations": 1,
+  "warmupTime": "10 s",
+  "warmupBatchSize": 1,
+  "measurementIterations": 2,
+  "measurementTime": "10 s",
+  "measurementBatchSize": 1,
+  "primaryMetric": {
+    "score": 8.875712588759713,
+    "scoreError": "NaN",
+    "scoreConfidence": [
+      "NaN",
+      "NaN"
+    ],
+    "scorePercentiles": {
+      "0.0": 8.868145528261346,
+      "50.0": 8.875712588759713,
+      "90.0": 8.88327964925808,
+      "95.0": 8.88327964925808,
+      "99.0": 8.88327964925808,
+      "99.9": 8.88327964925808,
+      "99.99": 8.88327964925808,
+      "99.999": 8.88327964925808,
+      "99.9999": 8.88327964925808,
+      "100.0": 8.88327964925808
+    },
+    "scoreUnit": "us/op",
+    "rawData": [
+      [
+        8.868145528261346,
+        8.88327964925808
+      ]
+    ]
+  },
+  "secondaryMetrics": {
+  }
+}

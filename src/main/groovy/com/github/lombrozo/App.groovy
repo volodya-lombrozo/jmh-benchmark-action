@@ -1,0 +1,38 @@
+package com.github.lombrozo
+
+import java.nio.file.Files
+import java.nio.file.Paths
+
+class App {
+    static void main(String[] args) {
+        if (args.length < 3) {
+            println "<base> <pr> <result>\nbase: path to the base benchmark file\npr: path to the pull request benchmark file\nresult: path to the result file"
+            return
+        }
+        String base = args[0]
+        String pr = args[1]
+        String result = args[2]
+        if (!base || !pr) {
+            println "Error: Missing or invalid benchmark files."
+            return
+        } else {
+            println "Comparing benchmarks '$base' and '$pr'"
+            println "Results will be saved to $result"
+        }
+        def basepath = Paths.get(base).toAbsolutePath()
+        if (Files.notExists(basepath)) {
+            throw new IllegalArgumentException("Base file does not exist: ${basepath}")
+        }
+        def prpath = Paths.get(pr).toAbsolutePath()
+        if (Files.notExists(prpath)) {
+            throw new IllegalArgumentException("PR file does not exist: $prpath")
+        }
+        def markdown = new MarkdownSummary(
+          new BenchmarkDiff(
+            new JsonBenchmarks(basepath),
+            new JsonBenchmarks(prpath)
+          )
+        ).asMarkdown()
+        Files.write(Paths.get(result), markdown.bytes)
+    }
+}
