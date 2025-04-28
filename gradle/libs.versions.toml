@@ -3,7 +3,7 @@
 
 [versions]
 groovy-all = "4.0.24"
-spock-core = "2.4-M5-groovy-4.0"
+spock-core = "2.4-M6-groovy-4.0"
 json = "20250107"
 
 [libraries]
