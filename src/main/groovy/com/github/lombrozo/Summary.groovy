@@ -3,7 +3,7 @@ package com.github.lombrozo
 import groovy.transform.EqualsAndHashCode
 
 @EqualsAndHashCode
-class Summary {
+final class Summary {
 
     private final List<Change> changes;
 

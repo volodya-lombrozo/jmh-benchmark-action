@@ -3,7 +3,7 @@ package com.github.lombrozo
 import org.json.JSONObject
 import spock.lang.Specification
 
-class JsonBenchmarkTest extends Specification {
+final class JsonBenchmarkTest extends Specification {
 
     def "retrieves name"() {
         setup:

@@ -2,7 +2,7 @@ package com.github.lombrozo
 
 import spock.lang.Specification
 
-import java.nio.charset.Charset
+import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -27,7 +27,7 @@ final class BenchmarkComparatorTest extends Specification {
     }
 
     def json(final Path resource) {
-        return getClass().getResourceAsStream("/$resource").text.getBytes(Charset.defaultCharset())
+        return getClass().getClassLoader().getResourceAsStream("$resource").text.getBytes(StandardCharsets.UTF_8)
     }
 
     def "test compareBenchmarks with performance loss"() {

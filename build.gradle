@@ -34,8 +34,9 @@ application {
 tasks.named('test') {
     useJUnitPlatform()
     testLogging {
-        showStandardStreams = true
+        exceptionFormat = 'full'
     }
+    jvmArgs '-Dfile.encoding=UTF-8'
 }
 
 tasks.register('fat-jar', Jar) {
@@ -48,4 +49,12 @@ tasks.register('fat-jar', Jar) {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
     with tasks.named('jar').get()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(GroovyCompile).configureEach {
+    groovyOptions.encoding = 'UTF-8'
 }

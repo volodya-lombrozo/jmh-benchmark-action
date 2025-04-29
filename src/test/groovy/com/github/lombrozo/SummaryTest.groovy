@@ -2,7 +2,7 @@ package com.github.lombrozo
 
 import spock.lang.Specification
 
-class SummaryTest extends Specification {
+final class SummaryTest extends Specification {
 
     def "should retrieve all changes"() {
         setup:

@@ -2,7 +2,7 @@ package com.github.lombrozo
 
 import spock.lang.Specification
 
-class BenchmarkDiffTest extends Specification {
+final class BenchmarkDiffTest extends Specification {
 
     def "should throw NothingToCompare when base benchmarks are empty"() {
         setup:

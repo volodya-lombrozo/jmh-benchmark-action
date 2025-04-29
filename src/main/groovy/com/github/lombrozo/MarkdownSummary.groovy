@@ -1,10 +1,10 @@
 package com.github.lombrozo;
 
-public final class MarkdownSummary {
+final class MarkdownSummary {
 
     private final Diff diff;
 
-    public MarkdownSummary(final Diff diff) {
+    MarkdownSummary(final Diff diff) {
         this.diff = diff;
     }
 
@@ -17,28 +17,27 @@ public final class MarkdownSummary {
             markdown.append("|------|------------|----------|--------|----------|------|------|\n");
             for (final Change change : summary.rows()) {
                 markdown.append(
-                    String.format(
-                        "| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s | %s |%n",
-                        change.name(),
-                        change.baseScore(),
-                        change.newScore(),
-                        change.diffScore(),
-                        change.diffPercent(),
-                        change.unit(),
-                        MarkdownSummary.hmode(change.mode())
-                    )
+                  String.format(
+                    "| `%s` | %.3f | %.3f | %.3f | %.2f%% | %s | %s |%n",
+                    change.name(),
+                    change.baseScore(),
+                    change.newScore(),
+                    change.diffScore(),
+                    change.diffPercent(),
+                    change.unit(),
+                    hmode(change.mode())
+                  )
                 );
             }
             markdown.append(this.recup(summary)).append("\n");
             return markdown.toString();
         } catch (final NothingToCompare nothing) {
-            return """
-                ### ⚠️ Benchmark Comparison Unavailable
-                
-                Unfortunately, one of the benchmarks is missing, and we couldn't generate a performance comparison report.
-                
-                Please ensure that both the base and PR benchmark results are available for analysis.
-                """;
+            return """### ⚠️ Benchmark Comparison Unavailable
+
+Unfortunately, one of the benchmarks is missing, and we couldn't generate a performance comparison report.
+
+Please ensure that both the base and PR benchmark results are available for analysis.
+""";
         }
     }
 
@@ -72,31 +71,31 @@ public final class MarkdownSummary {
 
     private String gain(final Change change) {
         return String.format(
-            "%n✅ Performance gain: `%s` is faster by %.3f %s (%.2f%%)",
-            change.name(),
-            Math.abs(change.diffScore()),
-            change.unit(),
-            Math.abs(change.diffPercent())
+          "%n✅ Performance gain: `%s` is faster by %.3f %s (%.2f%%)",
+          change.name(),
+          Math.abs(change.diffScore()),
+          change.unit(),
+          Math.abs(change.diffPercent())
         );
     }
 
     private String loss(final Change change) {
         return String.format(
-            "%n⚠️ Performance loss: `%s` is slower by %.3f %s (%.2f%%)",
-            change.name(),
-            change.diffScore(),
-            change.unit(),
-            change.diffPercent()
+          "%n⚠️ Performance loss: `%s` is slower by %.3f %s (%.2f%%)",
+          change.name(),
+          change.diffScore(),
+          change.unit(),
+          change.diffPercent()
         );
     }
 
     private String critical(final Change change) {
         return String.format(
-            "%n❌ Performance loss: `%s` is slower by %.3f %s (%.2f%%)",
-            change.name(),
-            change.diffScore(),
-            change.unit(),
-            change.diffPercent()
+          "%n❌ Performance loss: `%s` is slower by %.3f %s (%.2f%%)",
+          change.name(),
+          change.diffScore(),
+          change.unit(),
+          change.diffPercent()
         );
     }
 
@@ -110,7 +109,8 @@ public final class MarkdownSummary {
             case "avgt" -> "Average Time";
             case "thrpt" -> "Throughput";
             case "sample" -> "Sample";
-            case null, default -> mode;
+            case null -> mode;
+            default -> mode;
         };
     }
 }
