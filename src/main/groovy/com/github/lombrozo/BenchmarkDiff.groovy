@@ -1,6 +1,6 @@
 package com.github.lombrozo
 
-class BenchmarkDiff implements Diff {
+final class BenchmarkDiff implements Diff {
 
     private Benchmarks base
     private Benchmarks compare

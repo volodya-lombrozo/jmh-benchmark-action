@@ -2,7 +2,7 @@ package com.github.lombrozo
 
 import spock.lang.Specification
 
-class ChangeTest extends Specification {
+final class ChangeTest extends Specification {
 
     def "should correctly retrieve all properties"() {
         setup:

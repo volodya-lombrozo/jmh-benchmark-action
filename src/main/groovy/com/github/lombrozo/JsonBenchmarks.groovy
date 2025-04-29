@@ -7,7 +7,7 @@ import java.nio.charset.Charset
 import java.nio.file.Files
 import java.nio.file.Path
 
-class JsonBenchmarks implements Benchmarks {
+final class JsonBenchmarks implements Benchmarks {
 
     private JSONArray array
 

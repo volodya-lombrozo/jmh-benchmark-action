@@ -1,5 +1,7 @@
 # jmh-benchmark-action
 
+[![Tests](https://github.com/volodya-lombrozo/jmh-benchmark-action/actions/workflows/tests.yml/badge.svg)](https://github.com/volodya-lombrozo/jmh-benchmark-action/actions/workflows/tests.yml)
+
 `jmh-benchmark-action` is a GitHub Action designed to automate the process of
 running Java Microbenchmark Harness ([JMH](https://github.com/openjdk/jmh))
 benchmarks on pull requests.

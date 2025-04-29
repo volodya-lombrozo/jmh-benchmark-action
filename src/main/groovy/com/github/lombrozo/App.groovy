@@ -3,7 +3,7 @@ package com.github.lombrozo
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class App {
+final class App {
     static void main(String[] args) {
         if(args.length < 1){
             println "add at least some command"

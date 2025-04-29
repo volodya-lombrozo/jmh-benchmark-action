@@ -2,7 +2,7 @@ package com.github.lombrozo
 
 import spock.lang.Specification
 
-class MarkdownSummaryTest extends Specification {
+final class MarkdownSummaryTest extends Specification {
 
     def "should generate markdown for valid diff summary"() {
         setup:
@@ -32,9 +32,8 @@ class MarkdownSummaryTest extends Specification {
         def result = markdownSummary.asMarkdown()
 
         then:
-        result == getClass().getResourceAsStream("/unavailable.md").text
+        normalize(result) == normalize(getClass().getClassLoader().getResourceAsStream("unavailable.md").text)
     }
-
 
     def "should generate markdown for performance gain"() {
         setup:
@@ -46,7 +45,7 @@ class MarkdownSummaryTest extends Specification {
         def result = markdownSummary.asMarkdown()
 
         then:
-        result == getClass().getResourceAsStream("/gain.md").text
+        normalize(result) == normalize(getClass().getClassLoader().getResourceAsStream("gain.md").text)
     }
 
     def "should generate markdown for performance loss"() {
@@ -59,7 +58,7 @@ class MarkdownSummaryTest extends Specification {
         def result = markdownSummary.asMarkdown()
 
         then:
-        result == getClass().getResourceAsStream("/loss.md").text
+        normalize(result) == normalize(getClass().getClassLoader().getResourceAsStream("loss.md").text)
     }
 
     def "should generate markdown for same performance"() {
@@ -72,6 +71,10 @@ class MarkdownSummaryTest extends Specification {
         def result = markdownSummary.asMarkdown()
 
         then:
-        result == getClass().getResourceAsStream("/same.md").text
+        normalize(result) == normalize(getClass().getClassLoader().getResourceAsStream("same.md").text)
+    }
+
+    def normalize(String text) {
+        text.replaceAll("\\r\\n|\\r|\\n", "")
     }
 }

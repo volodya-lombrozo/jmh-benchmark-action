@@ -3,7 +3,7 @@ package com.github.lombrozo
 import groovy.transform.EqualsAndHashCode
 
 @EqualsAndHashCode
-class Change {
+final class Change {
 
     private final String name;
     private final double baseScore;

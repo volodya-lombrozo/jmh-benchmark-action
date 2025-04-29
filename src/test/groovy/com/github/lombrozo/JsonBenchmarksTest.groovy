@@ -2,7 +2,7 @@ package com.github.lombrozo
 
 import spock.lang.Specification
 
-class JsonBenchmarksTest extends Specification {
+final class JsonBenchmarksTest extends Specification {
 
     def "retrieves benchmark results"() {
         setup:

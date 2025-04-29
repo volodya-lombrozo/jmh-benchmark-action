@@ -5,7 +5,7 @@ import org.json.JSONArray
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class BenchmarkComparator {
+final class BenchmarkComparator {
 
     /**
      * Read a JSON array

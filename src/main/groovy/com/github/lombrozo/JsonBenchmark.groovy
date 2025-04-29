@@ -3,7 +3,7 @@ package com.github.lombrozo
 
 import org.json.JSONObject
 
-class JsonBenchmark implements Benchmark{
+final class JsonBenchmark implements Benchmark{
 
     private JSONObject json
 
