@@ -5,16 +5,20 @@ import java.nio.file.Paths
 
 class App {
     static void main(String[] args) {
+        if(args.length < 1){
+            println "add at least some command"
+            System.exit(-1)
+        }
         if (args.length < 3) {
             println "<base> <pr> <result>\nbase: path to the base benchmark file\npr: path to the pull request benchmark file\nresult: path to the result file"
-            return
+            System.exit(-1)
         }
         String base = args[0]
         String pr = args[1]
         String result = args[2]
         if (!base || !pr) {
             println "Error: Missing or invalid benchmark files."
-            return
+            System.exit(-1)
         } else {
             println "Comparing benchmarks '$base' and '$pr'"
             println "Results will be saved to $result"

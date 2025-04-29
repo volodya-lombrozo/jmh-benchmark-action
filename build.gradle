@@ -37,3 +37,15 @@ tasks.named('test') {
         showStandardStreams = true
     }
 }
+
+tasks.register('fat-jar', Jar) {
+    archiveClassifier = 'all'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': application.mainClass.get()
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with tasks.named('jar').get()
+}
