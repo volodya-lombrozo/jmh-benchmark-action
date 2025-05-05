@@ -16,9 +16,7 @@ final class BenchmarkDiff implements Diff {
         }
         def changes = []
         base.all().each { baseBenchmark ->
-            def compareBenchmark = compare.all().find {
-                it.name() == baseBenchmark.name() && it.mode() == baseBenchmark.mode()
-            }
+            def compareBenchmark = compare.all().find { it.same(baseBenchmark) }
             if (compareBenchmark) {
                 double baseScore = baseBenchmark.score()
                 double compareScore = compareBenchmark.score()
@@ -32,7 +30,8 @@ final class BenchmarkDiff implements Diff {
                     change,
                     percentageChange,
                     baseBenchmark.unit(),
-                    baseBenchmark.mode()
+                    baseBenchmark.mode(),
+                    baseBenchmark.params()
                   )
                 )
             }

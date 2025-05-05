@@ -246,7 +246,7 @@ contributing to this project, please follow these guidelines:
 
 Thank you for your interest in contributing to our project!
 
-## Similar Solutions
+## Alternatives
 
 If you're exploring alternatives to `jmh-benchmark-action`, you might consider
 the following solutions:

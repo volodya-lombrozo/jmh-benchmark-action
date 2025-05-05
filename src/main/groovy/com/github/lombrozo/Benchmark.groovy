@@ -8,4 +8,8 @@ interface Benchmark {
     String mode();
 
     String unit();
+
+    Map<String, String> params();
+
+    boolean same(Benchmark other);
 }

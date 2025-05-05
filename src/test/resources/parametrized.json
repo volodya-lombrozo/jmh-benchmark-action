@@ -1,0 +1,1687 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "dom-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 5.064982006075949,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5.064982006075949,
+                "50.0" : 5.064982006075949,
+                "90.0" : 5.064982006075949,
+                "95.0" : 5.064982006075949,
+                "99.0" : 5.064982006075949,
+                "99.9" : 5.064982006075949,
+                "99.99" : 5.064982006075949,
+                "99.999" : 5.064982006075949,
+                "99.9999" : 5.064982006075949,
+                "100.0" : 5.064982006075949
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    5.064982006075949
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "dom-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 18.30663390859232,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 18.30663390859232,
+                "50.0" : 18.30663390859232,
+                "90.0" : 18.30663390859232,
+                "95.0" : 18.30663390859232,
+                "99.0" : 18.30663390859232,
+                "99.9" : 18.30663390859232,
+                "99.99" : 18.30663390859232,
+                "99.999" : 18.30663390859232,
+                "99.9999" : 18.30663390859232,
+                "100.0" : 18.30663390859232
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    18.30663390859232
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "vtd-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 6.8491362635181385,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6.8491362635181385,
+                "50.0" : 6.8491362635181385,
+                "90.0" : 6.8491362635181385,
+                "95.0" : 6.8491362635181385,
+                "99.0" : 6.8491362635181385,
+                "99.9" : 6.8491362635181385,
+                "99.99" : 6.8491362635181385,
+                "99.999" : 6.8491362635181385,
+                "99.9999" : 6.8491362635181385,
+                "100.0" : 6.8491362635181385
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    6.8491362635181385
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "vtd-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 29.55470506784661,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 29.55470506784661,
+                "50.0" : 29.55470506784661,
+                "90.0" : 29.55470506784661,
+                "95.0" : 29.55470506784661,
+                "99.0" : 29.55470506784661,
+                "99.9" : 29.55470506784661,
+                "99.99" : 29.55470506784661,
+                "99.999" : 29.55470506784661,
+                "99.9999" : 29.55470506784661,
+                "100.0" : 29.55470506784661
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    29.55470506784661
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "antlr-object-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 6.307958626733922,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6.307958626733922,
+                "50.0" : 6.307958626733922,
+                "90.0" : 6.307958626733922,
+                "95.0" : 6.307958626733922,
+                "99.0" : 6.307958626733922,
+                "99.9" : 6.307958626733922,
+                "99.99" : 6.307958626733922,
+                "99.999" : 6.307958626733922,
+                "99.9999" : 6.307958626733922,
+                "100.0" : 6.307958626733922
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    6.307958626733922
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "antlr-object-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 59.817202208333335,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 59.817202208333335,
+                "50.0" : 59.817202208333335,
+                "90.0" : 59.817202208333335,
+                "95.0" : 59.817202208333335,
+                "99.0" : 59.817202208333335,
+                "99.9" : 59.817202208333335,
+                "99.99" : 59.817202208333335,
+                "99.999" : 59.817202208333335,
+                "99.9999" : 59.817202208333335,
+                "100.0" : 59.817202208333335
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    59.817202208333335
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-dom-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 6.796740245244565,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6.796740245244565,
+                "50.0" : 6.796740245244565,
+                "90.0" : 6.796740245244565,
+                "95.0" : 6.796740245244565,
+                "99.0" : 6.796740245244565,
+                "99.9" : 6.796740245244565,
+                "99.99" : 6.796740245244565,
+                "99.999" : 6.796740245244565,
+                "99.9999" : 6.796740245244565,
+                "100.0" : 6.796740245244565
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    6.796740245244565
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-antlr-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 6.447648128865979,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6.447648128865979,
+                "50.0" : 6.447648128865979,
+                "90.0" : 6.447648128865979,
+                "95.0" : 6.447648128865979,
+                "99.0" : 6.447648128865979,
+                "99.9" : 6.447648128865979,
+                "99.99" : 6.447648128865979,
+                "99.999" : 6.447648128865979,
+                "99.9999" : 6.447648128865979,
+                "100.0" : 6.447648128865979
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    6.447648128865979
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-antlr-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 105.15277315625,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 105.15277315625,
+                "50.0" : 105.15277315625,
+                "90.0" : 105.15277315625,
+                "95.0" : 105.15277315625,
+                "99.0" : 105.15277315625,
+                "99.9" : 105.15277315625,
+                "99.99" : 105.15277315625,
+                "99.999" : 105.15277315625,
+                "99.9999" : 105.15277315625,
+                "100.0" : 105.15277315625
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    105.15277315625
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "saxon",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 11.847469021301775,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 11.847469021301775,
+                "50.0" : 11.847469021301775,
+                "90.0" : 11.847469021301775,
+                "95.0" : 11.847469021301775,
+                "99.0" : 11.847469021301775,
+                "99.9" : 11.847469021301775,
+                "99.99" : 11.847469021301775,
+                "99.999" : 11.847469021301775,
+                "99.9999" : 11.847469021301775,
+                "100.0" : 11.847469021301775
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    11.847469021301775
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.manyQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "saxon",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 74.48918974814815,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 74.48918974814815,
+                "50.0" : 74.48918974814815,
+                "90.0" : 74.48918974814815,
+                "95.0" : 74.48918974814815,
+                "99.0" : 74.48918974814815,
+                "99.9" : 74.48918974814815,
+                "99.99" : 74.48918974814815,
+                "99.999" : 74.48918974814815,
+                "99.9999" : 74.48918974814815,
+                "100.0" : 74.48918974814815
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    74.48918974814815
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "dom-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 3.401801103366202,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3.401801103366202,
+                "50.0" : 3.401801103366202,
+                "90.0" : 3.401801103366202,
+                "95.0" : 3.401801103366202,
+                "99.0" : 3.401801103366202,
+                "99.9" : 3.401801103366202,
+                "99.99" : 3.401801103366202,
+                "99.999" : 3.401801103366202,
+                "99.9999" : 3.401801103366202,
+                "100.0" : 3.401801103366202
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    3.401801103366202
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "dom-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 22.271209,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22.271209,
+                "50.0" : 22.271209,
+                "90.0" : 22.271209,
+                "95.0" : 22.271209,
+                "99.0" : 22.271209,
+                "99.9" : 22.271209,
+                "99.99" : 22.271209,
+                "99.999" : 22.271209,
+                "99.9999" : 22.271209,
+                "100.0" : 22.271209
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    22.271209
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "vtd-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 2.6350371954174348,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2.6350371954174348,
+                "50.0" : 2.6350371954174348,
+                "90.0" : 2.6350371954174348,
+                "95.0" : 2.6350371954174348,
+                "99.0" : 2.6350371954174348,
+                "99.9" : 2.6350371954174348,
+                "99.99" : 2.6350371954174348,
+                "99.999" : 2.6350371954174348,
+                "99.9999" : 2.6350371954174348,
+                "100.0" : 2.6350371954174348
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    2.6350371954174348
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "vtd-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 13.931940451253482,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 13.931940451253482,
+                "50.0" : 13.931940451253482,
+                "90.0" : 13.931940451253482,
+                "95.0" : 13.931940451253482,
+                "99.0" : 13.931940451253482,
+                "99.9" : 13.931940451253482,
+                "99.99" : 13.931940451253482,
+                "99.999" : 13.931940451253482,
+                "99.9999" : 13.931940451253482,
+                "100.0" : 13.931940451253482
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    13.931940451253482
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "antlr-object-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 1.8339248496791933,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.8339248496791933,
+                "50.0" : 1.8339248496791933,
+                "90.0" : 1.8339248496791933,
+                "95.0" : 1.8339248496791933,
+                "99.0" : 1.8339248496791933,
+                "99.9" : 1.8339248496791933,
+                "99.99" : 1.8339248496791933,
+                "99.999" : 1.8339248496791933,
+                "99.9999" : 1.8339248496791933,
+                "100.0" : 1.8339248496791933
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    1.8339248496791933
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "antlr-object-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 52.93590563157895,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 52.93590563157895,
+                "50.0" : 52.93590563157895,
+                "90.0" : 52.93590563157895,
+                "95.0" : 52.93590563157895,
+                "99.0" : 52.93590563157895,
+                "99.9" : 52.93590563157895,
+                "99.99" : 52.93590563157895,
+                "99.999" : 52.93590563157895,
+                "99.9999" : 52.93590563157895,
+                "100.0" : 52.93590563157895
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    52.93590563157895
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-dom-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 2.2696127402450093,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2.2696127402450093,
+                "50.0" : 2.2696127402450093,
+                "90.0" : 2.2696127402450093,
+                "95.0" : 2.2696127402450093,
+                "99.0" : 2.2696127402450093,
+                "99.9" : 2.2696127402450093,
+                "99.99" : 2.2696127402450093,
+                "99.999" : 2.2696127402450093,
+                "99.9999" : 2.2696127402450093,
+                "100.0" : 2.2696127402450093
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    2.2696127402450093
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-antlr-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 2.0998265338929696,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2.0998265338929696,
+                "50.0" : 2.0998265338929696,
+                "90.0" : 2.0998265338929696,
+                "95.0" : 2.0998265338929696,
+                "99.0" : 2.0998265338929696,
+                "99.9" : 2.0998265338929696,
+                "99.99" : 2.0998265338929696,
+                "99.999" : 2.0998265338929696,
+                "99.9999" : 2.0998265338929696,
+                "100.0" : 2.0998265338929696
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    2.0998265338929696
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-antlr-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 94.97202398113208,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 94.97202398113208,
+                "50.0" : 94.97202398113208,
+                "90.0" : 94.97202398113208,
+                "95.0" : 94.97202398113208,
+                "99.0" : 94.97202398113208,
+                "99.9" : 94.97202398113208,
+                "99.99" : 94.97202398113208,
+                "99.999" : 94.97202398113208,
+                "99.9999" : 94.97202398113208,
+                "100.0" : 94.97202398113208
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    94.97202398113208
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "saxon",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 4.288789997428204,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4.288789997428204,
+                "50.0" : 4.288789997428204,
+                "90.0" : 4.288789997428204,
+                "95.0" : 4.288789997428204,
+                "99.0" : 4.288789997428204,
+                "99.9" : 4.288789997428204,
+                "99.99" : 4.288789997428204,
+                "99.999" : 4.288789997428204,
+                "99.9999" : 4.288789997428204,
+                "100.0" : 4.288789997428204
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    4.288789997428204
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.parallelQueries",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "saxon",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 36.775330051282054,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 36.775330051282054,
+                "50.0" : 36.775330051282054,
+                "90.0" : 36.775330051282054,
+                "95.0" : 36.775330051282054,
+                "99.0" : 36.775330051282054,
+                "99.9" : 36.775330051282054,
+                "99.99" : 36.775330051282054,
+                "99.999" : 36.775330051282054,
+                "99.9999" : 36.775330051282054,
+                "100.0" : 36.775330051282054
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    36.775330051282054
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "dom-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 0.03676126744959415,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.03676126744959415,
+                "50.0" : 0.03676126744959415,
+                "90.0" : 0.03676126744959415,
+                "95.0" : 0.03676126744959415,
+                "99.0" : 0.03676126744959415,
+                "99.9" : 0.03676126744959415,
+                "99.99" : 0.03676126744959415,
+                "99.999" : 0.03676126744959415,
+                "99.9999" : 0.03676126744959415,
+                "100.0" : 0.03676126744959415
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.03676126744959415
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "dom-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 13.751091739010988,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 13.751091739010988,
+                "50.0" : 13.751091739010988,
+                "90.0" : 13.751091739010988,
+                "95.0" : 13.751091739010988,
+                "99.0" : 13.751091739010988,
+                "99.9" : 13.751091739010988,
+                "99.99" : 13.751091739010988,
+                "99.999" : 13.751091739010988,
+                "99.9999" : 13.751091739010988,
+                "100.0" : 13.751091739010988
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    13.751091739010988
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "vtd-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 0.010733079176308903,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.010733079176308903,
+                "50.0" : 0.010733079176308903,
+                "90.0" : 0.010733079176308903,
+                "95.0" : 0.010733079176308903,
+                "99.0" : 0.010733079176308903,
+                "99.9" : 0.010733079176308903,
+                "99.99" : 0.010733079176308903,
+                "99.999" : 0.010733079176308903,
+                "99.9999" : 0.010733079176308903,
+                "100.0" : 0.010733079176308903
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.010733079176308903
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "vtd-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 5.743424414466131,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5.743424414466131,
+                "50.0" : 5.743424414466131,
+                "90.0" : 5.743424414466131,
+                "95.0" : 5.743424414466131,
+                "99.0" : 5.743424414466131,
+                "99.9" : 5.743424414466131,
+                "99.99" : 5.743424414466131,
+                "99.999" : 5.743424414466131,
+                "99.9999" : 5.743424414466131,
+                "100.0" : 5.743424414466131
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    5.743424414466131
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "antlr-object-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 0.014696052291805903,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.014696052291805903,
+                "50.0" : 0.014696052291805903,
+                "90.0" : 0.014696052291805903,
+                "95.0" : 0.014696052291805903,
+                "99.0" : 0.014696052291805903,
+                "99.9" : 0.014696052291805903,
+                "99.99" : 0.014696052291805903,
+                "99.999" : 0.014696052291805903,
+                "99.9999" : 0.014696052291805903,
+                "100.0" : 0.014696052291805903
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.014696052291805903
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "antlr-object-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 50.64855411111111,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 50.64855411111111,
+                "50.0" : 50.64855411111111,
+                "90.0" : 50.64855411111111,
+                "95.0" : 50.64855411111111,
+                "99.0" : 50.64855411111111,
+                "99.9" : 50.64855411111111,
+                "99.99" : 50.64855411111111,
+                "99.999" : 50.64855411111111,
+                "99.9999" : 50.64855411111111,
+                "100.0" : 50.64855411111111
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    50.64855411111111
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-dom-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 0.041863975015272864,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.041863975015272864,
+                "50.0" : 0.041863975015272864,
+                "90.0" : 0.041863975015272864,
+                "95.0" : 0.041863975015272864,
+                "99.0" : 0.041863975015272864,
+                "99.9" : 0.041863975015272864,
+                "99.99" : 0.041863975015272864,
+                "99.999" : 0.041863975015272864,
+                "99.9999" : 0.041863975015272864,
+                "100.0" : 0.041863975015272864
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.041863975015272864
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-antlr-xml",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 0.017409426253620564,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.017409426253620564,
+                "50.0" : 0.017409426253620564,
+                "90.0" : 0.017409426253620564,
+                "95.0" : 0.017409426253620564,
+                "99.0" : 0.017409426253620564,
+                "99.9" : 0.017409426253620564,
+                "99.99" : 0.017409426253620564,
+                "99.999" : 0.017409426253620564,
+                "99.9999" : 0.017409426253620564,
+                "100.0" : 0.017409426253620564
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.017409426253620564
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "flat-antlr-xml",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 95.30247971428571,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 95.30247971428571,
+                "50.0" : 95.30247971428571,
+                "90.0" : 95.30247971428571,
+                "95.0" : 95.30247971428571,
+                "99.0" : 95.30247971428571,
+                "99.9" : 95.30247971428571,
+                "99.99" : 95.30247971428571,
+                "99.999" : 95.30247971428571,
+                "99.9999" : 95.30247971428571,
+                "100.0" : 95.30247971428571
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    95.30247971428571
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "saxon",
+            "size" : "small"
+        },
+        "primaryMetric" : {
+            "score" : 0.18534662765405566,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.18534662765405566,
+                "50.0" : 0.18534662765405566,
+                "90.0" : 0.18534662765405566,
+                "95.0" : 0.18534662765405566,
+                "99.0" : 0.18534662765405566,
+                "99.9" : 0.18534662765405566,
+                "99.99" : 0.18534662765405566,
+                "99.999" : 0.18534662765405566,
+                "99.9999" : 0.18534662765405566,
+                "100.0" : 0.18534662765405566
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    0.18534662765405566
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.github.lombrozo.xnav.XmlBenchmark.singleQuery",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.4",
+        "vmName" : "Java HotSpot(TM) 64-Bit Server VM",
+        "vmVersion" : "21.0.4+8-LTS-274",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "impl" : "saxon",
+            "size" : "large"
+        },
+        "primaryMetric" : {
+            "score" : 23.94709809090909,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23.94709809090909,
+                "50.0" : 23.94709809090909,
+                "90.0" : 23.94709809090909,
+                "95.0" : 23.94709809090909,
+                "99.0" : 23.94709809090909,
+                "99.9" : 23.94709809090909,
+                "99.99" : 23.94709809090909,
+                "99.999" : 23.94709809090909,
+                "99.9999" : 23.94709809090909,
+                "100.0" : 23.94709809090909
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    23.94709809090909
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

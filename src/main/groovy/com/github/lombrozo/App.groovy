@@ -5,7 +5,7 @@ import java.nio.file.Paths
 
 final class App {
     static void main(String[] args) {
-        if(args.length < 1){
+        if (args.length < 1) {
             println "add at least some command"
             System.exit(-1)
         }
