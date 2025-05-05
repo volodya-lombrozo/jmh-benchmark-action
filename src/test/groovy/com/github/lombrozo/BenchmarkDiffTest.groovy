@@ -88,6 +88,16 @@ final class BenchmarkDiffTest extends Specification {
         String unit() {
             return unit
         }
+
+        @Override
+        Map<String, String> params() {
+            return new HashMap<String, String>(0)
+        }
+
+        @Override
+        boolean same(final Benchmark other) {
+            return this.name == other.name() && this.mode == other.mode()
+        }
     }
 
     private static class MockBenchmarks implements Benchmarks {

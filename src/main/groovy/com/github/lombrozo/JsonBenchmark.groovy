@@ -3,7 +3,7 @@ package com.github.lombrozo
 
 import org.json.JSONObject
 
-final class JsonBenchmark implements Benchmark{
+final class JsonBenchmark implements Benchmark {
 
     private JSONObject json
 
@@ -33,6 +33,18 @@ final class JsonBenchmark implements Benchmark{
     @Override
     String unit() {
         return json.getJSONObject("primaryMetric").getString("scoreUnit")
+    }
+
+    @Override
+    Map<String, String> params() {
+        return json.getJSONObject("params").toMap()
+    }
+
+    @Override
+    boolean same(final Benchmark other) {
+        return this.name() == other.name()
+          && this.mode() == other.mode()
+          && this.params() == other.params()
     }
 
     @Override
