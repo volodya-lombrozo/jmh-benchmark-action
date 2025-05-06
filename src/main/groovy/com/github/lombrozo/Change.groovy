@@ -81,6 +81,43 @@ final class Change {
     }
 
     /**
+     * Check if the change is an improvement.
+     * @return True if the change is an improvement, false otherwise
+     */
+    boolean improvement() {
+        if (this.mode.equals("avgt")) {
+            return this.diffScore <= 0;
+        } else if (this.mode.equals("thrpt")) {
+            return this.diffScore >= 0;
+        } else {
+            throw new IllegalArgumentException("Unknown mode: ${this.mode}");
+        }
+    }
+
+    /**
+     * Check if the change is a degradation.
+     * @return True if the change is a degradation, false otherwise
+     */
+    boolean degradation() {
+        return !this.improvement();
+    }
+
+    /**
+     * Check if the change is a critical degradation.
+     * @param threshold Threshold for critical degradation
+     * @return True if the change is a critical degradation, false otherwise
+     */
+    boolean criticalDegradation(double threshold) {
+        if (this.mode.equals("avgt")) {
+            return this.diffScore > 0 && this.diffPercent > threshold;
+        } else if (this.mode.equals("thrpt")) {
+            return this.diffScore < 0 && this.diffPercent < -threshold;
+        } else {
+            throw new IllegalArgumentException("Unknown mode: ${this.mode}");
+        }
+    }
+
+    /**
      * Get the parameters of the benchmark as a string.
      * @return Parameters as a string
      */

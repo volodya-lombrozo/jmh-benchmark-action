@@ -17,6 +17,10 @@ inputs:
     description: "Path to the benchmark results file"
     required: true
     default: "benchmark.json"
+  threshold:
+    description: "Allowed performance regression threshold"
+    required: false
+    default: "100"
 
 runs:
   using: "composite"
@@ -51,7 +55,7 @@ runs:
       shell: bash
     - name: Compare benchmark results with Groovy
       id: compare
-      run: ${{ github.action_path }}/gradlew -p ${{ github.action_path }} run --args="${{ github.workspace }}/base/benchmark.json ${{ github.workspace }}/pr/benchmark.json ${{ github.workspace }}/benchmark-comment.md"
+      run: ${{ github.action_path }}/gradlew -p ${{ github.action_path }} run --args="${{ github.workspace }}/base/benchmark.json ${{ github.workspace }}/pr/benchmark.json ${{ github.workspace }}/benchmark-comment.md --threshold=${{ inputs.threshold }}"
       shell: bash
     - name: Save PR number to file
       run: echo "${{ github.event.number }}" > pr-number

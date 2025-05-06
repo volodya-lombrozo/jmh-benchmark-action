@@ -58,4 +58,68 @@ final class ChangeTest extends Specification {
         expect:
         change.name() == "BenchmarkTest (param1=value1, param2=value2)"
     }
+
+    def "should check if the change is an improvement for avgt"() {
+        setup:
+        def change = new Change(
+          "BenchmarkTest",
+          100.0,
+          80.0,
+          -20.0,
+          -20.0,
+          "ms",
+          "avgt"
+        )
+
+        expect:
+        change.improvement() == true
+    }
+
+    def "shourd check if the change is not an improvement for avgt"() {
+        setup:
+        def change = new Change(
+          "BenchmarkTest",
+          100.0,
+          120.0,
+          20.0,
+          20.0,
+          "ms",
+          "avgt"
+        )
+
+        expect:
+        change.improvement() == false
+    }
+
+    def "should check if the change is an improvement for thrpt"() {
+        setup:
+        def change = new Change(
+          "BenchmarkTest",
+          100.0,
+          120.0,
+          20.0,
+          20.0,
+          "ms",
+          "thrpt"
+        )
+
+        expect:
+        change.improvement() == true
+    }
+
+    def "shourd check if the change is not an improvement for thrpt"() {
+        setup:
+        def change = new Change(
+          "BenchmarkTest",
+          100.0,
+          80.0,
+          -20.0,
+          -20.0,
+          "ms",
+          "thrpt"
+        )
+
+        expect:
+        change.improvement() == false
+    }
 }

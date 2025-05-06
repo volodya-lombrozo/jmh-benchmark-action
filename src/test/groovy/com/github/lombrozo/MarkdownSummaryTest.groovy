@@ -74,6 +74,48 @@ final class MarkdownSummaryTest extends Specification {
         normalize(result) == normalize(getClass().getClassLoader().getResourceAsStream("same.md").text)
     }
 
+    def "should generate markdown for critical performance loss"() {
+        setup:
+        def change = new Change("critical", 1, 10, 9.000, 900.00, "us/op", "avgt")
+        def summary = new Summary(change)
+        def markdownSummary = new MarkdownSummary(() -> summary)
+
+        when:
+        def result = markdownSummary.asMarkdown()
+
+        then:
+        normalize(result) == normalize(getClass().getClassLoader().getResourceAsStream("critical_loss.md").text)
+    }
+
+    def "should generate markdown for specific threshold, where the change is above of the threshold"() {
+        setup:
+        def change = new Change("above", 1, 10, 9, 900, "us/op", "avgt")
+        def summary = new Summary(change)
+        def markdownSummary = new MarkdownSummary(() -> summary, 100)
+
+        when:
+        def result = markdownSummary.asMarkdown()
+
+        then:
+        result.contains("is slower by 9.000 us/op (900.00%)")
+        result.contains("❌")
+    }
+
+
+    def "should generate markdown for specific threshold, where the change is below of the threshold"() {
+        setup:
+        def change = new Change("below", 1, 10, 9, 900, "us/op", "avgt")
+        def summary = new Summary(change)
+        def markdownSummary = new MarkdownSummary(() -> summary, 1000)
+
+        when:
+        def result = markdownSummary.asMarkdown()
+
+        then:
+        result.contains("is slower by 9.000 us/op (900.00%)")
+        result.contains("⚠️ ")
+    }
+
     def normalize(String text) {
         text.replaceAll("\\r\\n|\\r|\\n", "")
     }

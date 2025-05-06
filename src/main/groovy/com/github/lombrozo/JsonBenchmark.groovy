@@ -37,6 +37,9 @@ final class JsonBenchmark implements Benchmark {
 
     @Override
     Map<String, String> params() {
+        if (!json.has("params")) {
+            return [:]
+        }
         return json.getJSONObject("params").toMap()
     }
 

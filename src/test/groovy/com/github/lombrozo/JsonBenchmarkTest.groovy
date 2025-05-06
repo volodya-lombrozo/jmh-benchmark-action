@@ -61,6 +61,14 @@ final class JsonBenchmarkTest extends Specification {
         assert result.size() == 2: "Map should have 2 entries"
     }
 
+    def "retrieves benchmark params when they are absent"(){
+        when:
+        def result = new JsonBenchmark(json()).params()
+
+        then:
+        assert result.size() == 0: "Map should be empty"
+    }
+
     def "should return true when benchmarks have the same name and mode"() {
         setup:
         def first = new JsonBenchmark(json("TestBenchmark", "avgt", 10.0, "ms"))
@@ -101,6 +109,15 @@ final class JsonBenchmarkTest extends Specification {
         setup:
         def first = new JsonBenchmark(json("TestBenchmark", "avgt", 10.0, "ms", ["param1": "value1", "param2": "value2"]))
         def second = new JsonBenchmark(json("TestBenchmark", "avgt", 10.0, "ms", ["param2": "value2", "param1": "value1"]))
+
+        expect:
+        first.same(second)
+    }
+
+    def "should return true when benchmarks don't have params"() {
+        setup:
+        def first = new JsonBenchmark(json("TestBenchmark", "avgt", 10.0, "ms"))
+        def second = new JsonBenchmark(json("TestBenchmark", "avgt", 10.0, "ms"))
 
         expect:
         first.same(second)
