@@ -35,8 +35,23 @@ final class App {
           new BenchmarkDiff(
             new JsonBenchmarks(basepath),
             new JsonBenchmarks(prpath)
-          )
+          ),
+          findThreshold(args)
         ).asMarkdown()
         Files.write(Paths.get(result), markdown.bytes)
+    }
+
+    static int findThreshold(String[] args) {
+        int threshold = 100
+        args.each { arg ->
+            if (arg.startsWith("--threshold=")) {
+                try {
+                    threshold = Integer.parseInt(arg.split("=")[1])
+                } catch (NumberFormatException e) {
+                    println "Invalid threshold value. Using default: $threshold"
+                }
+            }
+        }
+        return threshold
     }
 }
