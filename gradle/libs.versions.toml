@@ -4,7 +4,7 @@
 [versions]
 groovy-all = "4.0.26"
 spock-core = "2.4-M6-groovy-4.0"
-json = "20250107"
+json = "20250517"
 
 [libraries]
 groovy-all = { module = "org.apache.groovy:groovy-all", version.ref = "groovy-all" }
