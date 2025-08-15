@@ -26,11 +26,11 @@ runs:
   using: "composite"
   steps:
     - name: Check out PR branch
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         path: pr
     - name: Check out base branch
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         ref: ${{ inputs.base-ref }}
         path: base
