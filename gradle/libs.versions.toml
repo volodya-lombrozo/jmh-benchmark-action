@@ -2,7 +2,7 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-groovy-all = "4.0.28"
+groovy-all = "5.0.0"
 spock-core = "2.4-M6-groovy-4.0"
 json = "20250517"
 
