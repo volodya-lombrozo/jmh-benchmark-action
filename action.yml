@@ -61,12 +61,12 @@ runs:
       run: echo "${{ github.event.number }}" > pr-number
       shell: bash
     - name: Upload comment as an artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: benchmark-comment
         path: benchmark-comment.md
     - name: Upload PR number as an artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: pr-number
         path: pr-number
