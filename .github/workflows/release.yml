@@ -15,4 +15,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
